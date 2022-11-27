@@ -1,0 +1,17 @@
+<p>detail-course works!</p>
+<ng-container *ngIf="course">
+    <div class="card mt-3" style="width: 18rem;">
+        <img [src]="course.img" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{course.name}}</h5>
+            <p class="card-text">{{course.description}}</p>
+            <a href="#"  [ngClass]='{"btn": true,
+            "btn-success": course.type ==="free"?true:false,
+            "btn-danger": course.type ==="premium"?true:false,
+              "me-1":true}'
+            >
+                {{course.type}}</a>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+</ng-container>

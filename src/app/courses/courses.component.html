@@ -1,0 +1,32 @@
+<div class="container text-center">
+    <app-search></app-search>
+    <app-fillter [all] ='getAllQuantityCourses()'
+     [free] ='getAllQuantityCoursesFree()'
+      [premium] ='getAllQuantityCoursesPremium()'
+      (fillterRadioButtonChanged)="onRadioButtonChange($event)">
+    </app-fillter>
+    <div class="container text-center">
+        <div class="row">
+            <ng-container *ngFor="let course of courses">
+                <div class="col" *ngIf="courseRadioButton === 'all' || courseRadioButton === course.type">
+                    <a routerLink="/courses/{{course.id}}">
+                        <div class="card mt-3" style="width: 18rem;">
+                            <img [src]="course.img" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{course.name}}</h5>
+                                <p class="card-text">{{course.description}}</p>
+                                <a href="#"  [ngClass]='{"btn": true,
+                                "btn-success": course.type ==="free"?true:false,
+                                "btn-danger": course.type ==="premium"?true:false,
+                                  "me-1":true}'
+                                >
+                                    {{course.type}}</a>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+            </ng-container>
+        </div>
+      </div>
+  </div>

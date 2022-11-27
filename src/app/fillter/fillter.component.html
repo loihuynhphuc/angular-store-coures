@@ -1,0 +1,17 @@
+<div class="fillter">
+    <label class="me-3" for="">
+    <input type="radio" name="fillter" id="" value="all"
+     [(ngModel)]='selectButtonValue' (change)=" onRadioButtonChanged()">
+       {{ 'All courses'+'{'+all+'}'}}
+    </label>
+    <label class="me-1" for="">
+        <input type="radio" name="fillter" id="" value="free" 
+         [(ngModel)]='selectButtonValue' (change)=" onRadioButtonChanged()">
+        {{ ' free courses'+'{'+free+'}'}}
+        </label>
+    <label class="me-1" for="">
+        <input type="radio" name="fillter" id="" value="premium" 
+         [(ngModel)]='selectButtonValue' (change)=" onRadioButtonChanged()">
+        {{ 'premium courses'+'{'+premium+'}'}}
+        </label>
+</div>
